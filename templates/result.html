@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume Screening Results</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 0 10px 20px 10px;
+            padding: 12px 25px;
+            background-color: #607d8b;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #455a64;
+        }
+
+        .btn-danger {
+            background-color: #d32f2f;
+        }
+
+        .btn-danger:hover {
+            background-color: #b71c1c;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #eceff1;
+            color: #333;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .high-score {
+            color: #388e3c;
+            font-weight: bold;
+        }
+
+        .low-score {
+            color: #d32f2f;
+            font-weight: bold;
+        }
+
+        .skills {
+            color: #555;
+            font-size: 14px;
+        }
+
+        .no-skills {
+            color: gray;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+            }
+
+            th, td {
+                padding: 12px;
+                font-size: 14px;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Resume Screening Results</h1>
+
+<div class="buttons">
+    <a href="/dashboard" class="btn">Back to Dashboard</a>
+    <a href="/history" class="btn">View History</a>
+    <a href="/clear-history" class="btn btn-danger" onclick="return confirm('Are you sure you want to clear all history?');">Clear History</a>
+</div>
+
+<table>
+    <tr>
+        <th>Rank</th>
+        <th>Resume Name</th>
+        <th>Match Score</th>
+        <th>Matched Skills</th>
+    </tr>
+
+    {% for name, score, skills in results %}
+    <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ name }}</td>
+        <td>
+            {% if score * 100 >= 70 %}
+                <span class="high-score">{{ "%.2f"|format(score * 100) }}%</span>
+            {% else %}
+                <span class="low-score">{{ "%.2f"|format(score * 100) }}%</span>
+            {% endif %}
+        </td>
+        <td>
+            {% if skills %}
+                <span class="skills">{{ skills | join(", ") }}</span>
+            {% else %}
+                <span class="no-skills">No matching skills</span>
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>
