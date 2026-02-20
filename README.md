@@ -33,7 +33,7 @@ A **Flask-based Resume Screening Web Application** that helps HR teams and recru
 1. Clone the repository:
 
 ```bash
-git clone your  github repository link <img width="1366" height="573" alt="2026-02-20 (1)" src="https://github.com/user-attachments/assets/f0f10836-1eba-4088-b961-7eb4a719af9a" />
+git clone" your  github repository link"
 
 cd Resume-Screening-System
 ````
@@ -120,20 +120,15 @@ Resume-Screening-System/
 
 ---
 
+**Dashboard**
 
-
-## **Screenshots** 
-
-You can add screenshots of the **login page**
-
-<img width="1364" height="598" alt="Screenshot 2026-02-20 153546" src="https://github.com/user-attachments/assets/3becc4c1-f73a-49ac-8346-78121751a6fb"
-**dashboard**
 <img width="1366" height="574" alt="2026-02-20" src="https://github.com/user-attachments/assets/4215adfb-fe1b-41bc-a087-0f3b095c4918" />
 
-**results page**
+**Results page**
 
 <img width="1339" height="372" alt="Screenshot 2026-02-20 154529" src="https://github.com/user-attachments/assets/227e076b-d248-4393-8c47-20e616a24a6f" />
 
- **history page**
+ **History page**
+ 
 <img width="1366" height="573" alt="2026-02-20 (1)" src="https://github.com/user-attachments/assets/a213d094-9ab8-42fd-833b-ed599d38eddf" />
 
